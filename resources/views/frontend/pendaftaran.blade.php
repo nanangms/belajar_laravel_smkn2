@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Formulir Pendaftaran Anggota STC</h3>
+                        <h3 class="card-title">Formulir Pendaftaran Anggota STC 2027</h3>
                     </div>
                     <form method="POST" action="{{ route('pendaftaran.submit') }}" enctype="multipart/form-data">
                         @csrf
