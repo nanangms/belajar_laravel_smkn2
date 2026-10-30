@@ -35,6 +35,15 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{ url('anggota') }}" class="nav-link {{ setActive('anggota*') }}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Anggota
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ url('berita') }}" class="nav-link {{ setActive('berita*') }}">
                         <i class="nav-icon fas fa-newspaper"></i>
                         <p>

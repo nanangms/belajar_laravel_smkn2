@@ -8,6 +8,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\AnggotaController;
 
 
 Route::get('/', [FrontendController::class, 'index']);
@@ -20,6 +21,7 @@ Route::post('/pendaftaran_submit', [PendaftaranController::class, 'pendaftaran_s
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+    Route::get('/anggota', [AnggotaController::class, 'index'])->name('anggota.index');
     Route::resource('users', UserController::class);
     Route::get('/berita/export-pdf', [BeritaController::class, 'exportPdf'])->name('berita.export-pdf');
     Route::resource('berita', BeritaController::class);
