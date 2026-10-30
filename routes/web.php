@@ -21,6 +21,7 @@ Route::post('/pendaftaran_submit', [PendaftaranController::class, 'pendaftaran_s
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::resource('users', UserController::class);
+    Route::get('/berita/export-pdf', [BeritaController::class, 'exportPdf'])->name('berita.export-pdf');
     Route::resource('berita', BeritaController::class);
     Route::resource('kategori', KategoriController::class);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

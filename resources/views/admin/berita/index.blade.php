@@ -45,7 +45,9 @@
                     <div class="card-header">
                         <a href="{{ route('berita.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add
                             Berita</a>
-
+                        <a href="{{ route('berita.export-pdf') }}" class="btn btn-danger btn-sm">
+                            <i class="fas fa-file-pdf"></i> Export PDF
+                        </a>
                     </div>
                     <div class="card-body" style="display: block;">
 

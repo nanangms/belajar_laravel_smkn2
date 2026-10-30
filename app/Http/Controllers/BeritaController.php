@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Berita;
 use App\Models\Kategori;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -17,6 +18,15 @@ class BeritaController extends Controller
     {
         $beritas = Berita::with('kategori')->latest()->get();
         return view('admin.berita.index', compact('beritas'));
+    }
+
+    public function exportPdf()
+    {
+        $beritas = Berita::with('kategori')->latest()->get();
+
+        return Pdf::loadView('admin.berita.pdf', compact('beritas'))
+            ->setPaper('a4', 'landscape')
+            ->download('berita.pdf');
     }
 
     /**
